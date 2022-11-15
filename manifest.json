@@ -1,6 +1,5 @@
 {
     "name": "Amazon product link creator",
-    "default_locale": "en",
     "version": "0.1",
     "description": "Creates anonymous url link to currently viewed Amazon product and stores it in the clipboard",
     "permissions": ["notifications", "scripting", "clipboardWrite", "activeTab"],
