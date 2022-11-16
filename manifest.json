@@ -1,8 +1,8 @@
 {
-    "name": "Amazon product link creator",
+    "name": "Amazon Product Linker",
     "version": "0.1",
-    "description": "Creates anonymous url link to currently viewed Amazon product and stores it in the clipboard",
-    "permissions": ["notifications", "scripting", "clipboardWrite", "activeTab"],
+    "description": "Creates no-login required link to currently viewed Amazon product and sends it to the clipboard. It remebers history of created links.",
+    "permissions": ["notifications", "scripting", "clipboardWrite", "activeTab", "storage"],
     "manifest_version": 3,
     "author": "maxoflondon",
     "background": {

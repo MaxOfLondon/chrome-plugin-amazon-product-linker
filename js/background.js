@@ -1,5 +1,5 @@
 /**
- * Registers action that is called when user clicks on addon button (browser action)
+ * Registers action that is called when user clicks on browser action (button icon)
  */
 chrome.action.onClicked.addListener(async (tab) => {
     // skip urls like "chrome://" to avoid extension error
@@ -18,12 +18,16 @@ chrome.action.onClicked.addListener(async (tab) => {
         return prev || tab.url.match(regex)
     }, null)
 
+    const product_title = tab.title;
+
     let notification
+    let url
     if(productId) {
+        url = `${tabUrl.protocol}//${tabUrl.host}/dp/${productId[1]}`
         notification = {
             type: 'basic',
             title: 'Link copied to clipboard',
-            message: `${tabUrl.protocol}//${tabUrl.host}/dp/${productId[1]}`,
+            message: url,
             iconUrl: '../images/img128.png'
         }
     } else {
@@ -35,11 +39,6 @@ chrome.action.onClicked.addListener(async (tab) => {
         }
     }
     
-    /**
-     * Copies passed url into clipboard in context of active tab
-     * 
-     * @param {String} url 
-     */
     function sendToClipboard(url) {
         const copyFrom = document.createElement("textarea");
         copyFrom.textContent = url;
@@ -49,7 +48,28 @@ chrome.action.onClicked.addListener(async (tab) => {
         document.body.removeChild(copyFrom);
     }
 
-    if('Notification' in this){
+    if(url) {
+        chrome.storage.sync.get({
+            history_enable: 'checked',
+            history_length: 100,
+            history_queue: [],
+        }, function(items) {
+            const history_enable = items['history_enable'];
+            const history_length = items['history_length'];
+            const history_queue = items['history_queue'];
+            if(history_enable) {
+                while (history_queue.length >= history_length) {
+                    history_queue.shift();
+                }
+                
+                history_queue.push({url: url, title: product_title, date: new Date().toLocaleString()});
+                chrome.storage.sync.set({
+                    history_queue
+                });
+            }
+        });
+    }
+    if('Notification' in this) {
         chrome.notifications.create('', notification);
         chrome.scripting.executeScript(
             {

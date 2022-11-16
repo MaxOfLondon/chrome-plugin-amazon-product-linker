@@ -1,0 +1,27 @@
+#history {
+    border: 1em;
+}
+
+#buttons {
+    padding: 1em;
+}
+
+#history_length {
+    max-width: 3em;
+}
+
+#status {
+    background-color: burlywood;
+}
+
+#clear {
+    margin-left: 1em;
+}
+
+input {
+    text-align: center;
+}
+
+h3 {
+    display: inline-block;
+}
