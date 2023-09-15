@@ -10,14 +10,24 @@
 If you pull down new changes or make a change to the extension's files locally, you will need to hit the "refresh" icon in chrome://extensions/ in order to run the new functionality.
 
 ## How to use
-1. Pin the Amazon Product Linker icon.
-![](images/apl-pin.png)
-2. When on Amazon product page click the Amazon Product icon.
-3. Paste link to IM, email or other sharing media.
-4. To see list of created links right-click on Amazon Product Linker icon and chose Options.
-![](images/apl-menu-options.png)
-5. Adjust options as required then press Save.
-![](images/apl-options.png)
-6. Copy list of links and use as required.
-
+<ol>
+<li>Pin the Amazon Product Linker icon.
+  <p align="center">
+    <img src="images/apl-pin.png" width="33%" />
+  </p>
+</li>
+<li>When on Amazon product page click the Amazon Product icon.</li>
+<li>Paste link to IM, email or other sharing media.</li>
+<li>To see list of created links right-click on Amazon Product Linker icon and chose Options.
+  <p align="center">
+    <img src="images/apl-menu-options.png") />
+  </p>
+</li>
+<li>Adjust options as required then press Save.
+  <p align="center" width="100%">
+    <img width="50%" src="images/apl-options.png" />
+  </p>
+</li>
+<li>Copy list of links and use as required.</li>
+</ol>
 Happy linking!
