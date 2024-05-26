@@ -1,7 +1,7 @@
 {
     "name": "Amazon Product Linker",
     "version": "0.1",
-    "description": "Creates no-login required link to currently viewed Amazon product and sends it to the clipboard. It remebers history of created links.",
+    "description": "Creates no-login-required link to currently viewed Amazon product and sends it to the clipboard. It keeps history of the links.",
     "permissions": ["notifications", "scripting", "clipboardWrite", "activeTab", "storage"],
     "manifest_version": 3,
     "author": "maxoflondon",
